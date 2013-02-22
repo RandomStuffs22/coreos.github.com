@@ -27,18 +27,24 @@ repositories that makes up Falcore OS. For install instructions visit here:
 
 ### Bootstrap the SDK chroot
 
-First, create a project directory. This will hold all of your git repos
-and the SDK chroot. A few gigs of space will be necessary.
+Create a project directory. This will hold all of your git repos and the SDK
+chroot. A few gigs of space will be necessary.
 
 ```
 mkdir coreos; cd coreos
 ```
 
-Now pull down the manifest that describes all of the git repos required
-to get started with `repo`.
+Initialize the .repo directory with the manifest that describes all of the git
+repos required to get started.
 
 ```
-repo init -u ssh://git@bitbucket.org/coreos/manifest.git -g minilayout --repo-url https://git.chromium.org/git/external/repo.git
+repo init -u git@github.com:falcoreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
+```
+
+Syncronize all of the required git repos from the manifest.
+
+```
+repo sync
 ```
 
 Finally, bootstrap an SDK chroot.
