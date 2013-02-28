@@ -1,11 +1,11 @@
 ---
-title: Falcore OS
+title: CoreOS
 layout: layout
 ---
 
-# Falcore OS
+# CoreOS
 
-Falcore OS uses the tooling built for Google Chromium OS. Therefore, if
+CoreOS uses the tooling built for Google Chromium OS. Therefore, if
 in doubt check out the [Chromium OS Developer Guide][devguide].
 
 [devguide]: http://www.chromium.org/chromium-os/developer-guide
@@ -21,7 +21,7 @@ from quirks and differences between host OSes.
 ## Install depot_tools
 
 `repo`, one of the `depot_tools`, helps to manage the collection of git
-repositories that makes up Falcore OS. Lets pull down the code and add
+repositories that makes up CoreOS. Lets pull down the code and add
 it to our path.
 
 ```
@@ -105,7 +105,7 @@ overlay.
 
 ### git and repo
 
-Falcore OS is managed by `repo`. It was built for the Android project and makes
+CoreOS is managed by `repo`. It was built for the Android project and makes
 managing a large number of git repos easier, from the announcement blog:
 
 > The repo tool uses an XML-based manifest file describing where the upstream
