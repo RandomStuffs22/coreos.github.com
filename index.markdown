@@ -14,7 +14,7 @@ in doubt check out the [Chromium OS Developer Guide][devguide].
 
 ## Getting Started
 
-Lets get setup with an SDK chroot and build a bootable image of Falcore
+Lets get setup with an SDK chroot and build a bootable image of Core
 OS. The SDK chroot has a full toolchain and isolates the build process
 from quirks and differences between host OSes.
 
