@@ -1,0 +1,16 @@
+markdown: redcarpet
+redcarpet:
+  render_options:
+    - with_toc_data # add HTML anchors to each header in the output HTML for hyper linking
+    - hard_wrap      # translate \n to <br>
+pygments: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+title : Falcore OS
+production_url : http://falcoreos.com
+description: "An Operating System"
+author :
+  name : Falcore OS
+  github : falcoreos
+  twitter : falcoreos

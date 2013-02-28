@@ -1,5 +1,6 @@
 ---
 title: Falcore OS
+layout: layout
 ---
 
 # Falcore OS
@@ -30,14 +31,14 @@ repositories that makes up Falcore OS. For install instructions visit here:
 Create a project directory. This will hold all of your git repos and the SDK
 chroot. A few gigs of space will be necessary.
 
-```
+```bash
 mkdir coreos; cd coreos
 ```
 
 Initialize the .repo directory with the manifest that describes all of the git
 repos required to get started.
 
-```
+```bash
 repo init -u git@github.com:falcoreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
 ```
 
@@ -136,11 +137,11 @@ emerge-amd64-generic  --emptytree  -p -v --tree  coreos-base/coreos-dev
 
 ## Known Issues
 
-### build\_packages fails on 
+### build\_packages fails on
 
-Sometimes coreos-dev or coreos builds will fail in `build\_packages` with a
+Sometimes coreos-dev or coreos builds will fail in `build_packages` with a
 backtrace pointing to `epoll`. This hasn't been tracked down but running
-build\_packages again should fix it. The error looks something like this:
+`build_packages` again should fix it. The error looks something like this:
 
 ```
 Packages failed:
