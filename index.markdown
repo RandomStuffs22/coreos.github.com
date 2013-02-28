@@ -102,7 +102,7 @@ overlay.
 ```
 
 After this finishes up commands for converting the raw bin into
-a bootable vm will be printed. Run the `image\_to\_vm` command.
+a bootable vm will be printed. Run the `image_to_vm` command.
 
 ### Booting
 
@@ -141,8 +141,6 @@ managing a large number of git repos easier, from the announcement blog:
 You can find the full manual for repo by visiting [Version Control with Repo and Git][vc-repo-git].
 
 [vc-repo-git]: http://source.android.com/source/version-control.html
-
-### Example change
 
 ## Tips and Tricks
 
