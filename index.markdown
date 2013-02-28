@@ -49,6 +49,13 @@ repo sync
 
 ### Building an image
 
+Grab a prebuilt SDK chroot and extract it to the chroot directory.
+
+```
+wget http://storage.falcoreos.com/cros-sdk-2013.02.27.000000.tar.xz
+sudo tar xf .cache/sdks/cros-sdk-2013.02.27.000000.tar.xz -C chroot
+```
+
 Enter the SDK chroot which contains all of the compilers and tooling.
 
 ```
