@@ -21,8 +21,8 @@ from quirks and differences between host OSes.
 ## Install depot_tools
 
 `repo`, one of the `depot_tools`, helps to manage the collection of git
-repositories that makes up CoreOS. Lets pull down the code and add
-it to our path.
+repositories that makes up CoreOS. Pull down the code and add it to your
+path:
 
 ```
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
