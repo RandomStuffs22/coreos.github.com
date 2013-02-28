@@ -21,10 +21,16 @@ from quirks and differences between host OSes.
 ## Install depot_tools
 
 `repo`, one of the `depot_tools`, helps to manage the collection of git
-repositories that makes up Falcore OS. For install instructions visit here:
-[depot tools install][depotinstall].
+repositories that makes up Falcore OS. Lets pull down the code and add
+it to our path.
 
-[depotinstall]: http://dev.chromium.org/developers/how-tos/install-depot-tools
+```
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH":`pwd`/depot_tools
+```
+
+You may want to add this to your .bashrc or /etc/profile.d/ so that you don’t
+need to reset your $PATH manually each time you open a new shell.
 
 ### Bootstrap the SDK chroot
 
