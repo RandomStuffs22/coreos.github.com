@@ -47,31 +47,34 @@ Syncronize all of the required git repos from the manifest.
 repo sync
 ```
 
-Finally, bootstrap an SDK chroot.
-
-```
-./chromite/bin/cros_sdk  --bootstrap
-```
-
 ### Building an image
 
-TODO: explain all of this.
+Enter the SDK chroot which contains all of the compilers and tooling.
 
 ```
 ./chromite/bin/cros_sdk
 ```
 
-```
-export BOARD=x86-generic
-```
+Setup the "core" user's password.
 
 ```
 ./set_shared_user_password.sh
 ```
 
+Target amd64-generic for this image.
+
+```
+export BOARD=amd64-generic
+```
+
+Build all of the target binary packages
+
 ```
 ./build_packages --board=${BOARD}
 ```
+
+Build an image based on the built binary packages along with the developer
+overlay.
 
 ```
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
