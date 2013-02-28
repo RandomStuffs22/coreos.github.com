@@ -144,7 +144,7 @@ emerge-amd64-generic  --emptytree  -p -v --tree  coreos-base/coreos-dev
 
 ## Known Issues
 
-### build\_packages fails on
+### build\_packages fails on coreos-base
 
 Sometimes coreos-dev or coreos builds will fail in `build_packages` with a
 backtrace pointing to `epoll`. This hasn't been tracked down but running
