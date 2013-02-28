@@ -120,3 +120,17 @@ things with the emerge tree view:
 ```
 emerge-amd64-generic  --emptytree  -p -v --tree  coreos-base/coreos-dev
 ```
+
+## Known Issues
+
+### build\_packages fails on 
+
+Sometimes coreos-dev or coreos builds will fail in `build\_packages` with a
+backtrace pointing to `epoll`. This hasn't been tracked down but running
+build\_packages again should fix it. The error looks something like this:
+
+```
+Packages failed:
+        coreos-base/coreos-dev-0.1.0-r63
+        coreos-base/coreos-0.0.1-r187
+```
