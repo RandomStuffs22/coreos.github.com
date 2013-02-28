@@ -31,14 +31,14 @@ repositories that makes up Falcore OS. For install instructions visit here:
 Create a project directory. This will hold all of your git repos and the SDK
 chroot. A few gigs of space will be necessary.
 
-```bash
+```
 mkdir coreos; cd coreos
 ```
 
 Initialize the .repo directory with the manifest that describes all of the git
 repos required to get started.
 
-```bash
+```
 repo init -u git@github.com:falcoreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
 ```
 
