@@ -101,8 +101,8 @@ overlay.
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
 ```
 
-After this finishes up it will tell you how to convert the raw bin into
-a bootable vm.
+After this finishes up commands for converting the raw bin into
+a bootable vm will be printed. Run the `image\_to\_vm` command.
 
 ### Booting
 
