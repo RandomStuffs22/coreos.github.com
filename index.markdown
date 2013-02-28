@@ -67,6 +67,12 @@ Target amd64-generic for this image.
 export BOARD=amd64-generic
 ```
 
+Setup a board root filesystem in /build/${BOARD}
+
+```
+./setup_board --board=${BOARD}
+```
+
 Build all of the target binary packages
 
 ```
