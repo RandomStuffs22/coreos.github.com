@@ -152,6 +152,21 @@ Using `repo forall` you can search across all of the git repos at once:
 repo forall -c  git grep 'CONFIG_EXTRA_FIRMWARE_DIR'
 ```
 
+### Caching git https passwords
+
+Note: You need git 1.7.10 or newer to use the credential helper
+
+Turn on the credential helper and git will save your password in memory
+for some time:
+
+```
+git config --global credential.helper cache
+```
+
+Why doesn't coreos use SSH in the git remotes? Because, we can't do
+anonymous clones from github with a ssh URL. In the future we will fix
+this.
+
 ## Base system dependency graph
 
 Get a view into what the base system will contain and why it will contain those
