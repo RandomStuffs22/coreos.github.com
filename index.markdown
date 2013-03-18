@@ -56,15 +56,8 @@ repo sync
 
 ### Building an image
 
-Grab a prebuilt SDK chroot and extract it to the chroot directory.
-
-```
-wget http://storage.core-os.com/cros-sdk-2013.02.27.000000.tar.xz
-mkdir chroot
-sudo tar xf cros-sdk-2013.02.27.000000.tar.xz -C chroot
-```
-
-Enter the SDK chroot which contains all of the compilers and tooling.
+Download and enter the SDK chroot which contains all of the compilers and
+tooling.
 
 ```
 ./chromite/bin/cros_sdk
