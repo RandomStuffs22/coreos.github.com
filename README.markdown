@@ -1,1 +1,1 @@
-See http://dev.core-os.com
+See http://dev.coreos.com
