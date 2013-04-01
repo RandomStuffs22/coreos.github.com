@@ -160,7 +160,7 @@ Why doesn't coreos use SSH in the git remotes? Because, we can't do
 anonymous clones from github with a ssh URL. In the future we will fix
 this.
 
-## Base system dependency graph
+### Base system dependency graph
 
 Get a view into what the base system will contain and why it will contain those
 things with the emerge tree view:
