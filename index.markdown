@@ -169,6 +169,19 @@ things with the emerge tree view:
 emerge-amd64-generic  --emptytree  -p -v --tree  coreos-base/coreos-dev
 ```
 
+### SSH Config
+
+You will be booting lots of VMs with on the fly ssh key generation. Add
+this in your `$HOME/.ssh/config` to stop the annoying fingerprint warnings.
+
+```
+Host 127.0.0.1
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  User core
+  LogLevel QUIET
+```
+
 ## Known Issues
 
 ### build\_packages fails on coreos-base
