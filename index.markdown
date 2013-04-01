@@ -1,5 +1,5 @@
 ---
-title: CoreOS
+title: CoreOS Developer Guide
 layout: layout
 ---
 
