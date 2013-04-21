@@ -63,6 +63,10 @@ tooling.
 ./chromite/bin/cros_sdk
 ```
 
+**WARNING:** If you evern need to delete the SDK chroot use
+`./chromite/bin/cros_sdk --delete`. Otherwise, you will delete `/dev`
+entries that are bind mounted into the chroot.
+
 Setup the "core" user's password.
 
 ```
