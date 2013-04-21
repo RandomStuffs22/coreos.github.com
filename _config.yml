@@ -7,10 +7,9 @@ pygments: true
 permalink: /posts/:title
 rdiscount:
   extensions: [smart]
-title : Falcore OS
-production_url : http://falcoreos.com
+title : Core OS
+production_url : http://dev.coreos.com
 description: "An Operating System"
 author :
-  name : Falcore OS
-  github : falcoreos
-  twitter : falcoreos
+  name : Core OS
+  github : coreos
