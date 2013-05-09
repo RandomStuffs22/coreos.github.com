@@ -45,7 +45,7 @@ Initialize the .repo directory with the manifest that describes all of the git
 repos required to get started.
 
 ```
-repo init -b default -u https://github.com/coreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
+repo init -u https://github.com/coreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
 ```
 
 Syncronize all of the required git repos from the manifest.
@@ -138,6 +138,17 @@ managing a large number of git repos easier, from the announcement blog:
 You can find the full manual for repo by visiting [Version Control with Repo and Git][vc-repo-git].
 
 [vc-repo-git]: http://source.android.com/source/version-control.html
+
+### Updating repo manifests
+
+The repo manifest for CoreOS lives in a git repository in
+`.repo/manifests`. If you need to update the manifest edit `default.xml`
+in this directory.
+
+`repo` uses a branch called 'default' to track the upstream branch you
+specify in `repo init`, this defaults to 'origin/master'. Keep this in
+mind when making changes, the origin git repository should not have a
+'default' branch.
 
 ## Tips and Tricks
 
