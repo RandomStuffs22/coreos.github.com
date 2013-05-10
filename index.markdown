@@ -5,10 +5,14 @@ layout: layout
 
 # CoreOS
 
-CoreOS uses the tooling built for Google Chromium OS. Therefore, if
+[CoreOS][coreos] uses the tooling built for Google Chromium OS. Therefore, if
 in doubt check out the [Chromium OS Developer Guide][devguide].
 
+If you find bugs or need help send an email to our [mailing list][list].
+
 [devguide]: http://www.chromium.org/chromium-os/developer-guide
+[coreos]: http://www.coreos.com
+[list]: https://groups.google.com/forum/#!forum/coreos-dev
 
 # Developer Guide
 
