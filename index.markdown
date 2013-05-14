@@ -214,3 +214,13 @@ Packages failed:
         coreos-base/coreos-dev-0.1.0-r63
         coreos-base/coreos-0.0.1-r187
 ```
+
+## Constants and IDs
+
+### CoreOS App ID
+
+This UUID is used to identify CoreOS to the update service and elsewhere.
+
+```
+e96281a6-d1af-4bde-9a0a-97b76e56dc57
+```
