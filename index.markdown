@@ -176,7 +176,6 @@ NOTE: This port will need to be internet accessible.
 ```
 /usr/local/bin/gmerge coreos-base/update_engine
 ```
-```
 
 ## Tips and Tricks
 
