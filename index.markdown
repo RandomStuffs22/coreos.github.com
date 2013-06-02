@@ -154,6 +154,30 @@ specify in `repo init`, this defaults to 'origin/master'. Keep this in
 mind when making changes, the origin git repository should not have a
 'default' branch.
 
+## Development Workflows
+
+### Updating Packages on an Image
+
+Building a new VM image is time consuming process. On development images you
+can use `gmerge` to build packages on your workstation and ship them to your
+target VM.
+
+1. On your workstation start the dev server inside the SDK chroot:
+
+```
+start_devserver --port 8080
+```
+
+NOTE: This port will need to be internet accessible.
+
+2. Run /usr/local/bin/gmerge from your VM and ensure that the settings in
+   `/etc/lsb-release` point to your workstation IP/hostname and port
+
+```
+/usr/local/bin/gmerge coreos-base/update_engine
+```
+```
+
 ## Tips and Tricks
 
 ### Searching all repo code
