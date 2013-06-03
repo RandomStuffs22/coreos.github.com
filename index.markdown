@@ -177,6 +177,27 @@ NOTE: This port will need to be internet accessible.
 /usr/local/bin/gmerge coreos-base/update_engine
 ```
 
+### Updating an Image with Update Engine
+
+If you want to test that an image you built can successfully upgrade a running
+VM you can use the `--image` argument to the devserver. Here is an example:
+
+```
+start_devserver --image ../build/images/amd64-generic/latest/chromiumos_image.bin
+```
+
+From the target virtual machine you run:
+
+```
+update_engine_client -update -omaha_url $WORKSTATION_HOSTNAME:8080
+```
+
+If the update fails you can check the logs of the update engine by running:
+
+```
+journalctl -u update-engine -o cat
+```
+
 ## Tips and Tricks
 
 ### Searching all repo code
