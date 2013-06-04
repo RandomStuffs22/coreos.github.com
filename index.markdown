@@ -198,6 +198,13 @@ If the update fails you can check the logs of the update engine by running:
 journalctl -u update-engine -o cat
 ```
 
+If you want to download another update you may need to clear the reboot
+pending status:
+
+```
+update_engine_client -reset_status
+```
+
 ## Tips and Tricks
 
 ### Searching all repo code
