@@ -252,6 +252,15 @@ Host 127.0.0.1
   LogLevel QUIET
 ```
 
+### Setting a default ${BOARD}
+
+If you find using --board tiresome, particularly since amd64-generic is our
+target right now, you can set it as the default for all those scripts:
+
+```
+echo amd64-generic > ~/trunk/src/scripts/.default_board
+```
+
 ## Known Issues
 
 ### build\_packages fails on coreos-base
