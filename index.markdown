@@ -205,6 +205,17 @@ pending status:
 update_engine_client -reset_status
 ```
 
+## Production Workflows
+
+### Pushing updates to the developer track
+
+To push an update to the developer track on update.core-os.net use the following tool:
+
+```
+./build_image --board=${BOARD} --noenable_rootfs_verification dev
+./core_update_developer_track.sh ../build/images/$BOARD/chromiumos_image.bin <apikey>
+```
+
 ## Tips and Tricks
 
 ### Searching all repo code
