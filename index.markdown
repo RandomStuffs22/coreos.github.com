@@ -272,6 +272,18 @@ target right now, you can set it as the default for all those scripts:
 echo amd64-generic > ~/trunk/src/scripts/.default_board
 ```
 
+### Hide loop devices from desktop environments
+
+By default desktop environments will dillagently display any mounted devices
+including loop devices used to contruct CoreOS disk images. If the daemon
+responsible for this happens to be ``udisks`` then you can disable this
+behavior with the following udev rule:
+
+```
+echo 'SUBSYSTEM=="block", KERNEL=="ram*|loop*", ENV{UDISKS_PRESENTATION_HIDE}="1", ENV{UDISKS_PRESENTATION_NOPOLICY}="1"' > /etc/udev/rules.d/85-hide-loop.rules
+udevadm control --reload
+```
+
 ## Known Issues
 
 ### build\_packages fails on coreos-base
