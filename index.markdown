@@ -18,7 +18,7 @@ If you find bugs or need help send an email to our [mailing list][list].
 
 ## Getting Started
 
-Lets get setup with an SDK chroot and build a bootable image of Core
+Let's get set up with an SDK chroot and build a bootable image of Core
 OS. The SDK chroot has a full toolchain and isolates the build process
 from quirks and differences between host OSes.
 
@@ -52,7 +52,7 @@ repos required to get started.
 repo init -u https://github.com/coreos/manifest.git -g minilayout --repo-url  https://git.chromium.org/git/external/repo.git
 ```
 
-Syncronize all of the required git repos from the manifest.
+Synchronize all of the required git repos from the manifest.
 
 ```
 repo sync
@@ -67,48 +67,48 @@ tooling.
 ./chromite/bin/cros_sdk
 ```
 
-**WARNING:** If you evern need to delete the SDK chroot use
+**WARNING:** If you ever need to delete the SDK chroot use
 `./chromite/bin/cros_sdk --delete`. Otherwise, you will delete `/dev`
 entries that are bind mounted into the chroot.
 
-Setup the "core" user's password.
+Set up the "core" user's password.
 
 ```
 ./set_shared_user_password.sh
 ```
 
-Target amd64-generic for this image.
+Target amd64-generic for this image:
 
 ```
 export BOARD=amd64-generic
 ```
 
-Setup a board root filesystem in /build/${BOARD}
+Setup a board root filesystem in /build/${BOARD}:
 
 ```
 ./setup_board --board=${BOARD}
 ```
 
-Build all of the target binary packages
+Build all of the target binary packages:
 
 ```
 ./build_packages --board=${BOARD}
 ```
 
 Build an image based on the built binary packages along with the developer
-overlay.
+overlay:
 
 ```
 ./build_image --board=${BOARD} --noenable_rootfs_verification dev
 ```
 
 After this finishes up commands for converting the raw bin into
-a bootable vm will be printed. Run the `image_to_vm` command.
+a bootable vm will be printed. Run the `image_to_vm.sh` command.
 
 ### Booting
 
 Once you build an image you can launch it with KVM (instructions will
-print out after image_to_vm.sh runs).
+print out after `image_to_vm.sh` runs).
 
 To demo the general direction we are starting in now the OS starts two
 small daemons that you can access over an HTTP interface. The first,
@@ -134,7 +134,7 @@ managing a large number of git repos easier, from the announcement blog:
 > repositories are, and how to merge them into a single working checkout. repo
 > will recurse across all the git subtrees and handle uploads, pulls, and other
 > needed items. repo has built-in knowledge of topic branches and makes working
-> with them an essential part of the workflow. 
+> with them an essential part of the workflow.
 > -- via the [Google Open Source Blog][repo-blog]
 
 [repo-blog]: http://google-opensource.blogspot.com/2008/11/gerrit-and-repo-android-source.html
@@ -237,7 +237,7 @@ for some time:
 git config --global credential.helper cache
 ```
 
-Why doesn't coreos use SSH in the git remotes? Because, we can't do
+Why doesn't CoreOS use SSH in the git remotes? Because, we can't do
 anonymous clones from github with a ssh URL. In the future we will fix
 this.
 
@@ -274,7 +274,7 @@ echo amd64-generic > ~/trunk/src/scripts/.default_board
 
 ### Hide loop devices from desktop environments
 
-By default desktop environments will dillagently display any mounted devices
+By default desktop environments will diligently display any mounted devices
 including loop devices used to contruct CoreOS disk images. If the daemon
 responsible for this happens to be ``udisks`` then you can disable this
 behavior with the following udev rule:
