@@ -284,6 +284,22 @@ echo 'SUBSYSTEM=="block", KERNEL=="ram*|loop*", ENV{UDISKS_PRESENTATION_HIDE}="1
 udevadm control --reload
 ```
 
+### Leaving developer mode
+
+Some daemons act differently in "dev mode". For example update_engine refuses
+to auto-update or connect to HTTPS URLs. If you need to test something out of
+dev_mode on a vm you can do the following:
+
+```
+mv /root/.dev_mode{,.old}
+```
+
+If you want to permanently leave you can run the following:
+
+```
+crossystem disable_dev_request=1; reboot
+```
+
 ## Known Issues
 
 ### build\_packages fails on coreos-base
