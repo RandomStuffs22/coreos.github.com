@@ -205,6 +205,24 @@ pending status:
 update_engine_client -reset_status
 ```
 
+### Updating portage-stable ebuilds from Gentoo
+
+There is a utility script called `update_ebuilds` that can pull from Gentoo's
+CVS tree directly into your local portage-stable tree. Here is an example usage
+bumping go to the latest version:
+
+```
+./update_ebuilds --commit dev-lang/go
+```
+
+To create a Pull Request after the bump run:
+
+```
+cd ~/trunk/src/third_party/portage-stable
+git checkout -b 'bump-go'
+git push <your remote> bump-go
+```
+
 ## Production Workflows
 
 ### Pushing updates to the developer track
