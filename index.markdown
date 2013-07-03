@@ -225,13 +225,14 @@ git push <your remote> bump-go
 
 ## Production Workflows
 
-### Pushing updates to the developer track
+### Pushing updates to the dev-channel
 
-To push an update to the developer track on update.core-os.net use the following tool:
+To push an update to the dev channel track on api.core-os.net use the
+following tool:
 
 ```
-./build_image --board=${BOARD} --noenable_rootfs_verification dev
-./core_update_developer_track.sh ../build/images/$BOARD/chromiumos_image.bin <apikey>
+COREOS_OFFICIAL=1 ./build_image --board=${BOARD} --noenable_rootfs_verification base
+./core_upload_update <required flags> --track dev-channel ../build/images/amd64-generic/latest/chromiumos_base_image.bin
 ```
 
 ## Tips and Tricks
