@@ -231,7 +231,7 @@ To push an update to the dev channel track on api.core-os.net use the
 following tool:
 
 ```
-COREOS_OFFICIAL=1 ./build_image --board=${BOARD} --noenable_rootfs_verification base
+COREOS_OFFICIAL=1 ./build_image --board=${BOARD} base
 ./core_upload_update <required flags> --track dev-channel ../build/images/amd64-generic/latest/chromiumos_base_image.bin
 ```
 
