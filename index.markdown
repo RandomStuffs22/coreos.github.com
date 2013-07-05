@@ -225,6 +225,19 @@ git push <your remote> bump-go
 
 ## Production Workflows
 
+### Building a Production Image
+
+This will build an image that can be ran under KVM and uses near production
+values. An actual production image will have the production update signing key
+inserted after the build.
+
+```
+COREOS_OFFICIAL=1 ./build_image prod --board=${BOARD}
+```
+
+After this finishes up commands for converting the raw bin into
+a bootable vm will be printed. Run the `image_to_vm.sh` command.
+
 ### Pushing updates to the dev-channel
 
 To push an update to the dev channel track on api.core-os.net use the
