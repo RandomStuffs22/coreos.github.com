@@ -229,23 +229,42 @@ git push <your remote> bump-go
 
 This will build an image that can be ran under KVM and uses near production
 values. An actual production image will have the production update signing key
-inserted after the build.
+inserted after the build. Note: `COREOS_OFFICIAL=1` is included here
+for completeness but unless you actually are releasing this image leave
+it out. It just changes the version and enables uploads by default.
 
 ```
 COREOS_OFFICIAL=1 ./build_image prod --board=${BOARD}
 ```
 
-After this finishes up commands for converting the raw bin into
-a bootable vm will be printed. Run the `image_to_vm.sh` command.
+The generated production image is bootable as-is by qemu but for a
+larger STATE partition or VMware images use `image_to_vm.sh` as
+described in the final output of `build_image1`.
 
-### Pushing updates to the dev-channel
+### Pushing updates to the dev-channel (manual builds)
 
-To push an update to the dev channel track on api.core-os.net use the
-following tool:
+To push an update to the dev channel track on api.core-os.net build a
+production images as described above and then use the following tool:
 
 ```
-COREOS_OFFICIAL=1 ./build_image --board=${BOARD} base
-./core_upload_update <required flags> --track dev-channel ../build/images/amd64-generic/latest/chromiumos_base_image.bin
+COREOS_OFFICIAL=1 ./core_upload_update <required flags> --track dev-channel --image ../build/images/amd64-generic/latest/coreos_production_image.bin
+```
+
+### Pushing updates to the dev-channel (automated builds)
+
+The automated build host does not have access to production signing keys
+so the final signing and push to api.core-os.net must be done elsewhere.
+The `au-generator.zip` archive provides the tools required to do this so
+a full SDK setup is not required. This does require gsutil to be
+installed and configured.
+
+```
+URL=gs://storage.core-os.net/coreos/amd64-generic/0000.0.0
+cd $(mktemp -d)
+gsutil cp $URL/au-generator.zip $URL/coreos_production_image.bin.bz2 ./
+unzip au-generator.zip
+bunzip2 coreos_production_image.bin.bz2
+COREOS_OFFICIAL=1 ./core_upload_update <required flags> --track dev-channel --image coreos_production_image.bin
 ```
 
 ## Tips and Tricks
