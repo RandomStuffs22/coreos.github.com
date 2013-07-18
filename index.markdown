@@ -80,26 +80,26 @@ Set up the "core" user's password.
 Target amd64-generic for this image:
 
 ```
-export BOARD=amd64-generic
+echo amd64-generic > .default_board
 ```
 
 Setup a board root filesystem in /build/${BOARD}:
 
 ```
-./setup_board --board=${BOARD}
+./setup_board
 ```
 
 Build all of the target binary packages:
 
 ```
-./build_packages --board=${BOARD}
+./build_packages
 ```
 
 Build an image based on the built binary packages along with the developer
 overlay:
 
 ```
-./build_image --board=${BOARD} --noenable_rootfs_verification dev
+./build_image --noenable_rootfs_verification dev
 ```
 
 After this finishes up commands for converting the raw bin into
@@ -234,7 +234,7 @@ for completeness but unless you actually are releasing this image leave
 it out. It just changes the version and enables uploads by default.
 
 ```
-COREOS_OFFICIAL=1 ./build_image prod --board=${BOARD}
+COREOS_OFFICIAL=1 ./build_image prod
 ```
 
 The generated production image is bootable as-is by qemu but for a
@@ -320,15 +320,6 @@ Host 127.0.0.1
   UserKnownHostsFile /dev/null
   User core
   LogLevel QUIET
-```
-
-### Setting a default ${BOARD}
-
-If you find using --board tiresome, particularly since amd64-generic is our
-target right now, you can set it as the default for all those scripts:
-
-```
-echo amd64-generic > ~/trunk/src/scripts/.default_board
 ```
 
 ### Hide loop devices from desktop environments
