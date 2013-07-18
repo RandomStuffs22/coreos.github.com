@@ -189,7 +189,7 @@ start_devserver --image ../build/images/amd64-generic/latest/chromiumos_image.bi
 From the target virtual machine you run:
 
 ```
-update_engine_client -update -omaha_url $WORKSTATION_HOSTNAME:8080
+update_engine_client -update -omaha_url http://$WORKSTATION_HOSTNAME:8080/update
 ```
 
 If the update fails you can check the logs of the update engine by running:
@@ -268,6 +268,14 @@ COREOS_OFFICIAL=1 ./core_upload_update <required flags> --track dev-channel --im
 ```
 
 ## Tips and Tricks
+
+### Finding all open pull requests and issues
+
+- [CoreOS Issues][issues]
+- [CoreOS Pull Requests][pullrequests]
+
+[issues]: https://github.com/organizations/coreos/dashboard/issues/
+[pullrequests]: https://github.com/organizations/coreos/dashboard/pulls/
 
 ### Searching all repo code
 
