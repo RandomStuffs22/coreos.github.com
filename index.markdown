@@ -228,13 +228,13 @@ git push <your remote> bump-go
 ### Building a Production Image
 
 This will build an image that can be ran under KVM and uses near production
-values. An actual production image will have the production update signing key
-inserted after the build. Note: `COREOS_OFFICIAL=1` is included here
-for completeness but unless you actually are releasing this image leave
-it out. It just changes the version and enables uploads by default.
+values.
+
+Note: Add `COREOS_OFFICIAL=1` here if you are making a real release. That will
+change the version and enable uploads by default.
 
 ```
-COREOS_OFFICIAL=1 ./build_image prod
+./build_image prod
 ```
 
 The generated production image is bootable as-is by qemu but for a
